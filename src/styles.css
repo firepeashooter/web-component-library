@@ -1,0 +1,12 @@
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background-color: lightblue;
+  width: 500px;
+  height: 500px;
+}
