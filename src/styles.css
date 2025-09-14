@@ -6,14 +6,21 @@ body{
 }
 
 .container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
   background-color: lightblue;
   width: 500px;
   height: 500px;
 }
 
-
 .dropdown--menu{
-  width: 200px;
-  height: 200px;
+  display: none;
+}
+
+.dropdown--menu.visible{
+  display: flex;
+  flex-direction: column;
   background-color: lightgreen;
+  padding:20px;
 }
