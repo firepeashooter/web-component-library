@@ -5,7 +5,9 @@ body{
   align-items: center;
 }
 
-.container{
+
+/* Whatever the dropdown is in needs a position:relative thing */
+.dropdown{
 
   position: relative;
 
@@ -19,6 +21,7 @@ body{
   display: none;
 }
 
+/* to position the dropdown menu properly we need position:absolute, and then top and left to align */
 .dropdown--menu.visible{
 
   position: absolute;

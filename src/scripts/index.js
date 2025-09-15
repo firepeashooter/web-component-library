@@ -1,15 +1,31 @@
 import "../styles.css";
 
+const dropdowns = document.querySelectorAll('.dropdown');
 
-const container = document.querySelector('.container');
-const dropdownButton = document.querySelector('.dropdown--button');
-const dropdownMenu = document.querySelector('.dropdown--menu')
+document.addEventListener("click", (e) => {
 
-dropdownButton.addEventListener("click", (e) => {
+    if (e.target.closest('.dropdown--menu') === null && e.target.closest('.dropdown--button') === null){
 
-    console.log("dropdown button pressed");
-    dropdownMenu.classList.toggle("visible");
+        for (let i = 0; i < dropdowns.length; i++){
+            const dropdownMenu = dropdowns[i].querySelector('.dropdown--menu');
+
+            if (dropdownMenu.classList.contains("visible")){
+                dropdownMenu.classList.toggle("visible");
+            }
+        }
+    }
 
 });
 
+for (let i = 0; i < dropdowns.length; i++){
+
+    const dropdownButton = dropdowns[i].querySelector(".dropdown--button");
+    const dropdownMenu = dropdowns[i].querySelector(".dropdown--menu");
+
+    dropdownButton.addEventListener("click", () => {
+
+        dropdownMenu.classList.toggle("visible");
+
+    });
+}
 
