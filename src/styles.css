@@ -1,11 +1,88 @@
 
 body{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.dropdowns{
+  display: flex;
+  margin-bottom: 200px;
+}
 
+
+
+/* IMAGE CAROSEL STYLING */
+
+.slides{
+  display: flex;
+  
+  width: 70%;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.slides img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DROPDOWN MENU STYLING */
 /* Whatever the dropdown is in needs a position:relative thing */
 .dropdown{
 
