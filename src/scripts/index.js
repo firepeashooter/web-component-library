@@ -1,4 +1,5 @@
 import "../styles.css";
+import "./carosel.js";
 
 const dropdowns = document.querySelectorAll('.dropdown');
 
