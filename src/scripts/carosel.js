@@ -6,20 +6,26 @@ const slides = document.querySelector(".slides");
 const nav = document.querySelector(".nav");
 const circles = Array.from(document.querySelectorAll(".circle"));
 
-const one = document.querySelector("#one");
-const two = document.querySelector("#two");
-const three = document.querySelector("#three");
-const four = document.querySelector("#four");
-
 
 let x = 0;
 let curPic = 1;
 
-//initial update
+//initial update loads the first 
 updateNav();
 
 
-rightButton.addEventListener("click", (e) => {
+nav.addEventListener("click", (e) =>{
+
+    if (e.target.classList.contains("circle")){
+        curPic = parseInt(e.target.id);
+    }
+
+    updateNav();
+
+});
+
+
+rightButton.addEventListener("click", () => {
 
     x -= 250;
     curPic += 1;
@@ -29,7 +35,7 @@ rightButton.addEventListener("click", (e) => {
 
 });
 
-leftButton.addEventListener("click", (e) => {
+leftButton.addEventListener("click", () => {
 
     x += 250;
     curPic -= 1;
