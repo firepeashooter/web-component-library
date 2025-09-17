@@ -4,6 +4,7 @@ const rightButton = document.querySelector("#right");
 const leftButton = document.querySelector("#left");
 const slides = document.querySelector(".slides");
 const nav = document.querySelector(".nav");
+const circles = Array.from(document.querySelectorAll(".circle"));
 
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
@@ -12,7 +13,7 @@ const four = document.querySelector("#four");
 
 
 let x = 0;
-let picNum = 1;
+let curPic = 1;
 
 //initial update
 updateNav();
@@ -21,46 +22,31 @@ updateNav();
 rightButton.addEventListener("click", (e) => {
 
     x -= 250;
-    picNum += 1;
+    curPic += 1;
     slides.style.transform= `translateX(${x}px)`;
 
     updateNav();
-
-
 
 });
 
 leftButton.addEventListener("click", (e) => {
 
     x += 250;
-    picNum -= 1;
+    curPic -= 1;
     slides.style.transform= `translateX(${x}px)`;
 
     updateNav();
-
-
-
 
 });
 
 function updateNav(){
 
-    //clear all circles
-    one.style.backgroundColor = "";
-    two.style.backgroundColor = "";
-    three.style.backgroundColor = "";
-    four.style.backgroundColor = "";
-
-    //update circles depending on picNum
-
-    if (picNum == 1){
-        one.style.backgroundColor = "darkgray";
-    } else if (picNum == 2){
-        two.style.backgroundColor = "darkgray";
-    } else if (picNum == 3){
-        three.style.backgroundColor = "darkgray";
-    } else if (picNum == 4){
-        four.style.backgroundColor = "darkgray";
+    //loop through all circles and properly update them
+    for (let i = 0; i < circles.length; i++){
+        if (parseInt(circles[i].id) == curPic){
+            circles[i].style.backgroundColor = "#555555";
+        } else{
+            circles[i].style.backgroundColor = "";
+        }
     }
-
 }
