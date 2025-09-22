@@ -6,7 +6,7 @@ const slides = document.querySelector(".slides");
 const nav = document.querySelector(".nav");
 const circles = Array.from(document.querySelectorAll(".circle"));
 
-
+//Transform in pixels
 let x = 0;
 let curPic = 1;
 
@@ -14,7 +14,7 @@ let curPic = 1;
 updateNav();
 
 
-nav.addEventListener("click", (e) =>{
+nav.addEventListener("click", (e) => {
 
     if (e.target.classList.contains("circle")){
         curPic = parseInt(e.target.id);
@@ -32,8 +32,8 @@ rightButton.addEventListener("click", () => {
     slides.style.transform= `translateX(${x}px)`;
 
     updateNav();
-
 });
+
 
 leftButton.addEventListener("click", () => {
 
